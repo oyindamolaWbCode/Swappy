@@ -81,8 +81,8 @@ function App() {
 
   return (
     <>
-      <div className="lg:w-[50%] mx-auto w-[100%] border-2 border-gray-300 mt-5 rounded-lg overflow-hidden swap-content">
-        <div className="relative w-full mb-3">
+      <div className="lg:w-[50%] mx-auto w-[100%] border-2 border-gray-300 mt-5 rounded-lg overflow-hidden ">
+        <div className="relative w-full mb-3 swap-content">
           <img
             src={selectedImage} // Display the selected image
             alt="Selected background"
@@ -148,7 +148,7 @@ function App() {
         {/* Carousel */}
 
         <div className="carousel w-full max-w-4xl mx-auto mt-10">
-          <p className="">
+          <p className="mb-3">
             Click on preferred image to change the background image
           </p>
           <div className="carousel-wrapper relative overflow-hidden border border-gray-300 rounded-lg">
