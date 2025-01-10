@@ -21,6 +21,8 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState(backImg); // Set the default image
   const [textareaText, setTextareaText] = useState("");
+  const [fontSize, setFontSize] = useState(16);
+  const [fontFamily, setFontFamily] = useState("sans-serif");
   const visibleCount = 5;
 
   // const [paragraphText, setParagraphText] = useState(
@@ -79,6 +81,14 @@ function App() {
     }
   };
 
+  const handleFontSizeChange = (event) => {
+    setFontSize(Number(event.target.value));
+  };
+
+  const handleFontFamilyChange = (event) => {
+    setFontFamily(event.target.value);
+  };
+
   return (
     <>
       <div className="lg:w-[50%] mx-auto w-[100%] border-2 border-gray-300 mt-5 rounded-lg overflow-hidden ">
@@ -92,7 +102,13 @@ function App() {
 
           {/* Text overlay */}
           <div className="absolute inset-0 flex items-center justify-center p-4 w-[80%] mx-auto">
-            <p className="text-white text-center text-sm bg-black bg-opacity-60 rounded-lg p-4">
+            <p
+              className="text-white text-center text-sm bg-black bg-opacity-60 rounded-lg p-4"
+              style={{
+                fontSize: `${fontSize}px`,
+                fontFamily: fontFamily,
+              }}
+            >
               {textareaText.trim().length > 0
                 ? textareaText
                 : "Start typing to see your text here..."}
@@ -145,6 +161,47 @@ function App() {
           </button>
         </div> */}
         </div>
+
+        {/* Font Size Control */}
+        <div className="my-5 px-4 w-[200px]">
+          <button
+            className="py-2 px-6 bg-slate-400 text-black rounded-md mb-3"
+            onClick={() => document.getElementById("fontSizeRange").click()}
+          >
+            Adjust Font Size
+          </button>
+          <input
+            id="fontSizeRange"
+            type="range"
+            min="10"
+            max="50"
+            value={fontSize}
+            onChange={handleFontSizeChange}
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+          />
+          <div className="text-sm text-center mt-2">
+            Font Size: {fontSize}px
+          </div>
+        </div>
+
+        {/* Font Family Dropdown */}
+        <div className="my-5 px-4 w-[200px]">
+          <label htmlFor="fontFamily" className="block mb-2 font-medium">
+            Select Font Family:
+          </label>
+          <select
+            id="fontFamily"
+            value={fontFamily}
+            onChange={handleFontFamilyChange}
+            className="w-full p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+          >
+            <option value="sans-serif">Sans Serif</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Poppins">Poppins</option>
+            <option value="Montserrat">Montserrat</option>
+          </select>
+        </div>
+
         {/* Carousel */}
 
         <div className="carousel w-full max-w-4xl mx-auto mt-10">
