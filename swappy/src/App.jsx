@@ -19,7 +19,9 @@ const images = [
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(backImg); // Set the default image
+  const [selectedImage, setSelectedImage] = useState(
+    "https://images.unsplash.com/photo-1475776408506-9a5371e7a068?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D"
+  );
   const [textareaText, setTextareaText] = useState("");
   const [fontSize, setFontSize] = useState(16);
   const [fontFamily, setFontFamily] = useState("sans-serif");
