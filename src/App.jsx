@@ -25,7 +25,7 @@ function App() {
   const [textareaText, setTextareaText] = useState("");
   const [fontSize, setFontSize] = useState(16);
   const [fontFamily, setFontFamily] = useState("sans-serif");
-  const visibleCount = 5;
+  const visibleCount = 3;
 
   // const [paragraphText, setParagraphText] = useState(
   //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ad velit sapiente deserunt omnis repellendus illo possimus reiciendis voluptates ipsum praesentium, ducimus facere soluta eveniet perspiciatis dolorum provident repudiandae beatae. Hic et aliquid at dolor ut laborum! Odit accusantium pariatur nulla reprehenderit similique expedita laboriosam laborum hic animi deleniti? Ab illo reprehenderit sequi laborum accusamus officia in incidunt officiis! Consequuntur?"
@@ -212,7 +212,7 @@ function App() {
           </p>
           <div className="carousel-wrapper relative overflow-hidden border border-gray-300 rounded-lg">
             {/* Images */}
-            <div className="flex transition-transform duration-300">
+            <div className="flex transition-transform duration-300 mx-auto justify-items-center justify-center">
               {getVisibleImages().map((image, index) => (
                 <div
                   key={index}
